@@ -1,35 +1,36 @@
 <template>
-    <v-container secondary fluid class="background" id="about">
-        <v-row>
-            <v-col>
-                <v-card flat color="transparent" class="secondary--text">
-                    <v-card-title class="justify-center text-h5 text-md-h3 font-weight-bold">Palačinka za vsakogar.</v-card-title>
-                    <v-card-subtitle class="secondary--text text-center text-body-1 font-weight-regular">Pri nas si palačinko, sladko ali slano, sestaviš kar sam. Klikni na gumb in si oglej kaj ponujamo.</v-card-subtitle>
-                    <v-card-actions class="justify-center">
-                        <v-btn rounded color="primary">Naša ponudba</v-btn>
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-        </v-row>
-    </v-container>
+	<v-container secondary fluid fill-height id="about">
+		<v-row justify="center" align="center">
+			<v-col class="text-center align-items-center" color="success" cols="12">
+				<h5 class="text-h5 text-md-h3 font-weight-bold">
+					Palačinka za vsakogar.
+				</h5>
+				<p class="text-body-1 font-weight-regular">
+					Pri nas si palačinko, sladko ali slano, sestaviš kar sam. Klikni na
+					gumb in si oglej kaj ponujamo.
+				</p>
+				<v-btn rounded color="primary">Naša ponudba</v-btn>
+			</v-col>
+		</v-row>
+	</v-container>
 </template>
 
 <script>
 export default {
-    name: 'About'
-}
+	name: "About",
+};
 </script>
 
 <style>
-    .background {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background-image: url('../assets/background.jpg');
-        background-size: cover;
-        background-attachment: fixed;
-    }
-    #about {
-        padding: 40px 0;
-    }
+#about {
+	height: 100vh;
+	padding: 40px 0;
+}
+#about v-parralax {
+	/* height: 50%!important; */
+	margin-right: 100px !important;
+}
+/* #about v-parralax > img {
+        height: 50%;
+    } */
 </style>

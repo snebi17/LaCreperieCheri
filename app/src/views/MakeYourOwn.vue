@@ -1,5 +1,5 @@
 <template>
-    <b-container class="d-flex my-5">
+    <!-- <b-container class="d-flex my-5">
         <b-card border-variant="light" class="overflow col-6">
             <b-row>
                 <b-col cols="4" v-for="item in items" :key="item.id">
@@ -31,7 +31,15 @@
         <b-alert v-if="errorAlert" variant="error">
 
         </b-alert>
-    </b-container>
+    </b-container> -->
+    <v-container>
+        <v-row class="col-12 col-md-6">
+            <v-col>
+                
+            </v-col>
+        </v-row>
+        <v-row class="col-12 col-md-6"></v-row>
+    </v-container>
 </template>
 
 <script>

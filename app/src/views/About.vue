@@ -1,17 +1,13 @@
 <template>
-    <!-- <b-container class="my-5 py-5 black">
-        <b-row>
-            <b-col>About</b-col>
-            <b-col>Us</b-col>
-            <b-col>On this page</b-col>
-        </b-row>
-    </b-container> -->
-    <v-container>
+    <v-container secondary fluid class="background" id="about">
         <v-row>
             <v-col>
-                <v-card img="../assets/background.jpg">
-                    <v-card-title class="text-center">Palačinka za vsakogar.</v-card-title>
-                    <v-card-subtitle class="text-center">Pri nas si palačinko, sladko ali slano, sestaviš kar sam. Klikni na gumb in si oglej kaj ponujamo.</v-card-subtitle>
+                <v-card flat color="transparent" class="secondary--text">
+                    <v-card-title class="justify-center text-h5 text-md-h3 font-weight-bold">Palačinka za vsakogar.</v-card-title>
+                    <v-card-subtitle class="secondary--text text-center text-body-1 font-weight-regular">Pri nas si palačinko, sladko ali slano, sestaviš kar sam. Klikni na gumb in si oglej kaj ponujamo.</v-card-subtitle>
+                    <v-card-actions class="justify-center">
+                        <v-btn rounded color="primary">Naša ponudba</v-btn>
+                    </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>
@@ -25,10 +21,15 @@ export default {
 </script>
 
 <style>
-    body {
-        height: 90vh;
+    .background {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        background-image: url('../assets/background.jpg');
+        background-size: cover;
+        background-attachment: fixed;
     }
-    .black {
-        background-color: black;
+    #about {
+        padding: 40px 0;
     }
 </style>

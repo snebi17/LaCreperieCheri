@@ -1,11 +1,16 @@
 <template> 
-    <v-container>
-        <Navigation/>
-        <About/>
-        <Menu/>
-        <Gallery/>
-        <Contact/>
-    </v-container>
+      <v-app>
+          <transition name="fade" mode="out-in">
+        <v-main>
+            <Navigation/>
+            <About/>
+            <Menu/>
+            <Gallery/>
+            <Contact/>
+        </v-main>
+        </transition>
+
+      </v-app>
 </template>
 
 <script>
@@ -17,7 +22,6 @@ import Contact from './views/Contact.vue';
 
 export default {
   name: 'App',
-
   components: {
       Navigation,
       About,
@@ -25,7 +29,6 @@ export default {
       Gallery,
       Contact
   },
-
   data: () => ({
     //
   }),

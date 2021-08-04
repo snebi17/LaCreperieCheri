@@ -1,45 +1,23 @@
 <template>
-    <!-- <b-container fluid>
-        <b-navbar variant="light" class="py-4 px-5">
-            <b-col class="col-md-4 col-8 ml-5">
-                <b-navbar-brand href="about">Navigacija</b-navbar-brand>
-            </b-col>
-            <b-col class="col-md-8 col-4 mr-5">
-                <b-navbar-nav class="justify-content-end">
-                    <b-nav-item href="about" class="btn">
-                        O nas
-                    </b-nav-item>
-                    <b-nav-item href="contact" class="btn">
-                        Delovni čas in kontakt
-                    </b-nav-item>
-                    <b-nav-item href="gallery" class="btn mx-5">
-                        Galerija
-                    </b-nav-item>
-                    <b-nav-item href="menu" class="btn">
-                        Ponudba
-                    </b-nav-item>
-                </b-navbar-nav>
-            </b-col>
-        </b-navbar>
-    </b-container> -->
-    <v-container>
-        <v-toolbar>
-            <v-toolbar-title @click="$vuetify.goTo(target, options)">Navigacija</v-toolbar-title>
+    <v-container primary fluid class="header fixed-bar">
+        <v-toolbar flat color="transparent">
+            <v-toolbar-title class="text text-h5 font-weight-bold" @click="$vuetify.goTo('about', options)">La Crêperie Chéri®</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-toolbar-items>
+            <v-toolbar-items class="d-none d-md-flex">
                 <v-col>
-                    <v-btn @click="$vuetify.goTo('about', options)">O Nas</v-btn>
+                    <v-btn rounded depressed class="text" color="transparent" @click="$vuetify.goTo('about', options)" :to="{ hash: '#about' }">O Nas</v-btn>
                 </v-col>
                 <v-col>
-                    <v-btn @click="$vuetify.goTo('contact', options)">Delovni čas in kontakt</v-btn>
+                    <v-btn rounded depressed class="text" color="transparent" @click="$vuetify.goTo('contact', options)" :to="{ hash: '#contact' }">Delovni čas in kontakt</v-btn>
                 </v-col>
                 <v-col>
-                    <v-btn @click="$vuetify.goTo('gallery', options)">Galerija</v-btn>
+                    <v-btn rounded depressed class="text" color="transparent" @click="$vuetify.goTo('gallery', options)" :to="{ hash: 'gallery' }">Galerija</v-btn>
                 </v-col>
                 <v-col>
-                    <v-btn @click="$vuetify.goTo('menu', options)">Ponudba</v-btn>
+                    <v-btn rounded depressed class="text" color="transparent" @click="$vuetify.goTo('menu', options)" :to="{ hash: 'menu' }">Ponudba</v-btn>
                 </v-col>
             </v-toolbar-items>
+            <v-app-bar-nav-icon class="d-flex d-md-none"></v-app-bar-nav-icon>
         </v-toolbar>
     </v-container>
 </template>
@@ -57,6 +35,7 @@ export default {
   computed: {
       target() {
         const value = this[this.type];
+        console.log(value);
         if (!isNaN(value)) return Number(value);
         else return value;
       },
@@ -72,5 +51,9 @@ export default {
 </script>
 
 <style scoped>
-
+    .fixed-bar {
+        position: fixed;
+        position: -webkit-sticky;
+        z-index: 2;
+    }
 </style>

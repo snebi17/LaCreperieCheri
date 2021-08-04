@@ -1,17 +1,17 @@
 <template>
-    <div class="nf-wrapper">
-        <div class="not-found">
-            Ta stran ne obstaja!
-        </div>
-    </div>
+  <v-container>
+    <v-row>
+      <v-col class="text-center">
+        <h1>Ta stran ne obstaja!</h1>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
-    name: 'NotFound'
-}
+  name: "NotFound",
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

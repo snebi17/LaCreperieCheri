@@ -1,11 +1,12 @@
 <template>
 	<v-app color="secondary">
 		<v-main>
-			<Navigation />
+			<Navigation v-lazy/>
 			<About />
 			<Menu />
 			<Gallery />
 			<Contact />
+			<Footer/>
 		</v-main>
 	</v-app>
 </template>
@@ -16,6 +17,7 @@ import About from "./views/About.vue";
 import Menu from "./views/Menu.vue";
 import Gallery from "./views/Gallery.vue";
 import Contact from "./views/Contact.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
 	name: "App",
@@ -25,6 +27,7 @@ export default {
 		Menu,
 		Gallery,
 		Contact,
+		Footer
 	},
 	data: () => ({
 		//

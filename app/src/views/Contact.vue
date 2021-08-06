@@ -1,10 +1,12 @@
 <template>
-	<v-container secondary fluid id="contact">
-		<v-row class="align-center">
-			<v-col class="col-12 col-md-6">
+	<v-container secondary fluid id="contact" class="py-16">
+		<v-row align="center" justify="center">
+			<v-col class="col-12 col-md-4">
 				<v-card flat color="transparent">
 					<v-card-title class="justify-center text-h5 font-weight-bold"
-						>La Crêperie Chéri</v-card-title
+						>
+						La Crêperie Chéri
+						</v-card-title
 					>
 					<v-card-text>
 						<v-col>
@@ -29,10 +31,13 @@
 					</v-card-text>
 				</v-card>
 			</v-col>
-			<v-col class="col-12 col-md-6">
+			<v-col class="col-12 col-md-4">
 				<v-card flat color="transparent">
 					<v-card-title class="justify-center text-h5 font-weight-bold"
-						>Delovnik</v-card-title
+						>
+							<v-icon x-large left>mdi-clock</v-icon>
+							Delovnik
+						</v-card-title
 					>
 					<v-card-text>
 						<v-col>

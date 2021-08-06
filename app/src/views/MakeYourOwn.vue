@@ -1,44 +1,20 @@
 <template>
-    <!-- <b-container class="d-flex my-5">
-        <b-card border-variant="light" class="overflow col-6">
-            <b-row>
-                <b-col cols="4" v-for="item in items" :key="item.id">
-                    <b-card v-bind:id="item.id" draggable="true" @drag="drag" class="rounded-0 mb-4">
-                        <p class="left-top">{{ item.id }}</p>
-                        <b-card-text class="d-flex flex-column align-items-center p-3 text-center">
-                            <p>{{ item.name }}</p>
-                            <span>{{ item.price }}</span>
-                        </b-card-text>
-                    </b-card>
-                </b-col>
-            </b-row>
-        </b-card>
-        <b-card border-variant="light" @drop="drop" @dragover="allowDrop" class="col-6">
-            <b-row>
-                <b-col cols="4" v-for="item in cart" :key="item.id">
-                    <b-card class="rounded-0 mb-4">
-                        <b-card-text class="d-flex flex-column align-items-center p-3 text-center">
-                            <p>{{ item.name }}</p>
-                            <span>{{ item.price }}</span>
-                        </b-card-text>
-                    </b-card>
-                </b-col>
-            </b-row>
-        </b-card>
-        <b-alert v-if="successAlert" variant="success">
-
-        </b-alert>
-        <b-alert v-if="errorAlert" variant="error">
-
-        </b-alert>
-    </b-container> -->
-    <v-container>
-        <v-row class="col-12 col-md-6">
-            <v-col>
-                
-            </v-col>
-        </v-row>
-        <v-row class="col-12 col-md-6"></v-row>
+    <v-container fluid>
+            <v-row class="col-12 col-md-6">
+                <v-col cols="12" md="2" v-for="item in items" :key="item.id" class="overflow">
+					<v-card>
+						<v-card-text class="text-center">
+							<p class="text">{{ item.name }}</p>
+							<span class="text">{{ item.price }}</span>
+						</v-card-text>
+					</v-card>
+				</v-col>
+            </v-row>
+            <v-row class="col-12 col-md-6">
+                <v-col>
+                    Pizda li ti materina
+                </v-col>
+            </v-row>
     </v-container>
 </template>
 
@@ -120,16 +96,7 @@ export default {
 </script>
 
 <style>
-    p, span {
-        padding: 0;
-    }
     .overflow {
-        overflow: auto;
-        height: 500px;
-    }
-    .left-top {
-        position: absolute;
-        left: 0px;
-        top: 0px; 
-    }
+		overflow: auto;
+	}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<v-container secondary fluid id="menu">
+	<v-container secondary fluid id="menu" class="py-16">
 		<v-container>
 			<v-row class="justify-center">
 				<v-col>
@@ -129,62 +129,77 @@
 					</v-card>
 				</v-col>
 			</v-row>
-		</v-container>
-		<v-container>
-			<v-row class="ma-0 pa-0 border">
+			<v-row>
 				<v-col>
-					<v-toolbar flat color="transparent">
+					<v-toolbar flat color="transparent" class="mt-16">
 						<v-toolbar-items>
 							<v-col>
-								<v-btn rounded>Sladko</v-btn>
+								<v-btn ref="sladko" x-large tile depressed color="primary">Sladko</v-btn>
 							</v-col>
 							<v-col>
-								<v-btn rounded>Slano</v-btn>
+								<v-btn ref="slano" large tile depressed color="primary">Slano</v-btn>
 							</v-col>
 							<v-col>
-								<v-btn rounded>Pijače</v-btn>
+								<v-btn ref="pijače" large tile depressed color="primary">Pijače</v-btn>
 							</v-col>
 						</v-toolbar-items>
 					</v-toolbar>
 				</v-col>
 			</v-row>
-			<v-row class="overflow">
-				<v-col cols="3" v-for="item in items" :key="item.id">
-					<v-card>
-						<v-card-text class="text-center">
-							<p class="text">{{ item.name }}</p>
-							<span class="text">{{ item.price }}</span>
-						</v-card-text>
+			<v-container fluid primary class="py-16 px-16 mb-16">
+				<v-row class="overflow">
+					<v-col cols="12" md="2" v-for="item in items" :key="item.id">
+						<v-card>
+							<v-card-text class="text-center">
+								<p class="text">{{ item.name }}</p>
+								<span class="text">{{ item.price }}</span>
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
+			</v-container>
+			<v-row>
+				<v-col>
+					<v-card flat color="transparent">
+						<v-card-title class="justify-center text-h3 font-weight-bold">
+							Sestavi svojo palačinko.
+						</v-card-title>
+						<v-card-subtitle class="text-center text-subtitle-1">
+							Si želiš palačinko sestavljeno po svojem okusu? Klikni gumb,
+							sestavi palačinko in oddaj naročilo!
+						</v-card-subtitle>
+						<v-card-actions class="justify-center">
+							<v-btn rounded color="primary" @click="overlay = true">
+								Sestavi svojo
+							</v-btn>
+						</v-card-actions>
 					</v-card>
 				</v-col>
 			</v-row>
 		</v-container>
-		<v-row>
-			<v-col>
-				<v-card flat color="transparent">
-					<v-card-title class="justify-center text-h3 font-weight-bold">
-						Sestavi svojo palačinko.
-					</v-card-title>
-					<v-card-subtitle class="text-center text-subtitle-1">
-						Si želiš palačinko sestavljeno po svojem okusu? Klikni gumb,
-						sestavi palačinko in oddaj naročilo!
-					</v-card-subtitle>
-					<v-card-actions class="justify-center">
-						<v-btn rounded color="primary" @click="overlay = true">
-							Sestavi svojo
-						</v-btn>
-					</v-card-actions>
-				</v-card>
-			</v-col>
-		</v-row>
+		<v-overlay :value="overlay" :opacity=".8" :absolute="absolute">
+			<v-container class="full-size" fluid>
+				<v-btn color="red" fab @click="overlay = false" class="top-right">
+					<v-icon x-large>mdi-close</v-icon>
+				</v-btn>
+				<v-row justify="center" align="center">				
+					<MakeYourOwn :items="items" />
+				</v-row>
+			</v-container>
+		</v-overlay>
 	</v-container>
 </template>
 
 <script>
 import axios from "axios";
 
+import MakeYourOwn from './MakeYourOwn.vue';
+
 export default {
 	name: "Menu",
+	components: {
+		MakeYourOwn
+	},
 	data() {
 		return {
 			items: [],
@@ -207,9 +222,6 @@ export default {
 			return rows;
 		},
 	},
-	created() {
-		this.getItems();
-	},
 	methods: {
 		getItems() {
 			axios
@@ -230,33 +242,20 @@ export default {
 			}
 		},
 	},
+	created() {
+		this.getItems();
+	}
 };
 </script>
 
-<style>
-#gallery {
-	padding: 40px 0;
-}
-span {
-	font-weight: bold;
-}
-.overflow {
-	overflow: auto;
-	height: 500px;
-}
-.margin {
-	margin-bottom: 10px;
-}
-.transparent {
-	background-color: transparent !important;
-}
-ul,
-li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.opacity {
-	opacity: 0.4;
-}
+<style>	
+	.full-size {
+		width: 100vw;
+		height: 100vh;
+	}
+	.top-right {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+	}
 </style>

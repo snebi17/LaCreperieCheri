@@ -5,6 +5,8 @@
 				class="text text-h5 font-weight-bold"
 				><v-btn
                     text
+					x-large
+					class="no-uppercase"
                     @click="$vuetify.goTo('about', options)"
                     :to="{ hash: '#about' }"
                     >La Crêperie Chéri®</v-btn

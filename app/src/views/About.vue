@@ -9,7 +9,7 @@
 					Pri nas si palačinko, sladko ali slano, sestaviš kar sam. Klikni na
 					gumb in si oglej kaj ponujamo.
 				</p>
-				<v-btn rounded color="primary">Naša ponudba</v-btn>
+				<v-btn rounded color="primary" to="#menu">Naša ponudba</v-btn>
 			</v-col>
 		</v-row>
 	</v-container>

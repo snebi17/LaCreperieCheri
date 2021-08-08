@@ -1,6 +1,6 @@
 <template>
 	<v-container secondary fluid fill-height id="about">
-		<v-row justify="center" align="center">
+		<v-row justify="center" align="center" class="px-10">
 			<v-col class="text-center align-items-center" color="success" cols="12">
 				<h5 class="text-h5 text-md-h3 font-weight-bold">
 					Palačinka za vsakogar.
@@ -24,11 +24,6 @@ export default {
 <style>
 #about {
 	height: 100vh;
-	padding: 40px 0;
-}
-#about v-parralax {
-	/* height: 50%!important; */
-	margin-right: 100px !important;
 }
 /* #about v-parralax > img {
         height: 50%;

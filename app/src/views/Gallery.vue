@@ -3,7 +3,7 @@
 		<v-row align="center" justify="center">
 			<v-col class="col-12 col-md-4">
 				<v-card flat color="transparent">
-					<v-card-title class="text-h4 font-weight-bold secondary--text">
+					<v-card-title class="text-h5 text-md-h3 font-weight-bold secondary--text">
 						<v-icon left x-large color="secondary">mdi-instagram</v-icon>
 						Instagram
 					</v-card-title>

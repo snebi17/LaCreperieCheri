@@ -117,19 +117,17 @@
 					</v-hover>
 				</v-col>
 			</v-row>
-			<v-row>
-				<v-col>
-					<v-card flat color="transparent">
-						<v-card-title class="justify-center text-h3 font-weight-bold">
-							Premium palačinke.
-							</v-card-title>
-						<v-card-subtitle class="text-center text-subtitle-1">
-							Poskusite naše premium palačinke. Ne bo Vam žal!
-						</v-card-subtitle>
-					</v-card>
+			<v-row justify="center" align="center">
+				<v-col class="text-center align-items-center" color="success" cols="12">
+					<h5 class="text-h5 text-md-h3 font-weight-bold">
+						Premium palačinke.
+					</h5>
+					<p class="text-body-1 font-weight-regular">
+						Poskusite naše premium palačinke. Ne bo Vam žal!
+					</p>
 				</v-col>
 			</v-row>
-			<v-row>
+			<!--<v-row>
 				<v-col>
 					<v-toolbar flat color="transparent" class="mt-16">
 						<v-toolbar-items>
@@ -147,40 +145,39 @@
 				</v-col>
 			</v-row>
 			<v-container fluid primary class="py-16 px-16 mb-16">
-				<v-row class="overflow">
-					<v-col cols="12" md="2" v-for="item in items" :key="item.id">
-						<v-card>
-							<v-card-text class="text-center">
-								<p class="text">{{ item.name }}</p>
-								<span class="text">{{ item.price }}</span>
-							</v-card-text>
-						</v-card>
-					</v-col>
-				</v-row>
-			</v-container>
-			<v-row>
-				<v-col>
-					<v-card flat color="transparent">
-						<v-card-title class="justify-center text-h3 font-weight-bold">
-							Sestavi svojo palačinko.
-						</v-card-title>
-						<v-card-subtitle class="text-center text-subtitle-1">
-							Si želiš palačinko sestavljeno po svojem okusu? Klikni gumb,
-							sestavi palačinko in oddaj naročilo!
-						</v-card-subtitle>
-						<v-card-actions class="justify-center">
-							<v-btn rounded color="primary" @click="overlay = true">
-								Sestavi svojo
-							</v-btn>
-						</v-card-actions>
-					</v-card>
+				<v-container v-for="group in sweet" :key="group.id">
+					<v-flex v-for="(items, type) in group" :key="type.id">
+						<v-row class="text-h5 font-weight-bold">{{ type }}</v-row>
+						<v-row>
+							<v-col v-for="item in items" :key="item.id" cols="12" md="2">
+								<v-card class="card-size justify-center">
+									<v-card-text class="text-center justify-center">
+										<p class="text-body-1 ma-0">{{ item.name }}</p>
+										<span class="text-body-1 font-weight-bold">{{ item.price }} €</span>
+									</v-card-text>
+								</v-card>
+							</v-col>
+						</v-row>
+					</v-flex>
+				</v-container>
+			</v-container> -->
+			<v-row justify="center" align="center">
+				<v-col class="text-center align-items-center" color="success" cols="12">
+					<h5 class="text-h5 text-md-h3 font-weight-bold">
+						Sestavi svojo palačinko.
+					</h5>
+					<p class="text-body-1 font-weight-regular">
+						Si želiš palačinko sestavljeno po svojem okusu? Klikni gumb,
+						sestavi palačinko in oddaj naročilo!
+					</p>
+					<v-btn rounded color="primary" @click="overlay = true">Sestavi svojo</v-btn>
 				</v-col>
 			</v-row>
 		</v-container>
 		<v-overlay :value="overlay" :opacity=".8" :absolute="absolute">
 			<v-container class="full-size" fluid>
-				<v-btn color="red" fab @click="overlay = false" class="top-right">
-					<v-icon x-large>mdi-close</v-icon>
+				<v-btn small color="red" fab @click="overlay = false" class="top-right">
+					<v-icon>mdi-close</v-icon>
 				</v-btn>
 				<v-row justify="center" align="center">				
 					<MakeYourOwn :items="items" />
@@ -202,7 +199,9 @@ export default {
 	},
 	data() {
 		return {
-			items: [],
+			sweet: [],
+			salty: [],
+			other: [],
 			errors: null,
 			overlay: false,
 		};
@@ -226,8 +225,12 @@ export default {
 		getItems() {
 			axios
 				.get("http://localhost:4000/menu")
-				.then((items) => (this.items = items.data))
-				.catch((errors) => (this.errors = errors));
+				.then((items) => {
+					this.sweet = items.data[0].sladko;
+					this.salty = items.data[0].slano;
+					this.other = items.data[0].pijača;
+				})
+				.catch((errors) => this.errors = errors);
 		},
 		redirect() {
 			if (this.$route.path === "/menu/make-your-own") {
@@ -248,7 +251,13 @@ export default {
 };
 </script>
 
-<style>	
+<style>
+	.overflow {
+		overflow: auto;
+	}
+	.card-size {
+		height: 100%;
+	}
 	.full-size {
 		width: 100vw;
 		height: 100vh;

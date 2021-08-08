@@ -2,7 +2,7 @@
 	<v-container fluid class="fixed-bar">
 		<v-toolbar flat color="transparent">
 			<v-toolbar-title
-				class="text text-h5 font-weight-bold"
+				class="text-h5 font-weight-bold"
 				><v-btn
                     text
 					x-large

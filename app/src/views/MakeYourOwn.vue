@@ -1,20 +1,15 @@
 <template>
     <v-container fluid>
-            <v-row class="col-12 col-md-6">
-                <v-col cols="12" md="2" v-for="item in items" :key="item.id" class="overflow">
-					<v-card>
-						<v-card-text class="text-center">
-							<p class="text">{{ item.name }}</p>
-							<span class="text">{{ item.price }}</span>
-						</v-card-text>
-					</v-card>
-				</v-col>
-            </v-row>
-            <v-row class="col-12 col-md-6">
-                <v-col>
-                    Pizda li ti materina
-                </v-col>
-            </v-row>
+        <v-row class="col-12 col-md-6">
+            <v-col>
+                
+            </v-col>
+        </v-row>
+        <v-row class="col-12 col-md-6">
+            <v-col>
+                
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
@@ -96,7 +91,16 @@ export default {
 </script>
 
 <style>
+    p, span {
+        padding: 0;
+    }
     .overflow {
-		overflow: auto;
-	}
+        overflow: auto;
+        height: 500px;
+    }
+    .left-top {
+        position: absolute;
+        left: 0px;
+        top: 0px; 
+    }
 </style>

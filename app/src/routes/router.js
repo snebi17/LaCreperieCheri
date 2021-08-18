@@ -1,5 +1,4 @@
 import VueRouter from "vue-router";
-import goTo from "vuetify/es5/services/goto";
 // import Store from '@/store';
 
 const routes = [
@@ -38,15 +37,15 @@ const routes = [
 const router = new VueRouter({
 	mode: "history",
 	scrollBehavior: (to, from, savedPosition) => {
-		let scrollTo = 0;
-
 		if (to.hash) {
-			scrollTo = to.hash;
+			return {
+				selector: to.hash,
+				behavior: "smooth"
+			}
 		} else if (savedPosition) {
-			scrollTo = savedPosition.y;
+			return savedPosition
 		}
-
-		return goTo(scrollTo);
+		return { x: 0, y: 0 }
 	},
 	routes: routes,
 });

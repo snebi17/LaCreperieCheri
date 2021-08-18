@@ -101,10 +101,4 @@ p > span {
 .inline {
 	display: flex;
 }
-span {
-	/* border: 1px solid black; */
-}
-#contact {
-	padding: 40px 0;
-}
 </style>

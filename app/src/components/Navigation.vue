@@ -7,7 +7,6 @@
                     text
 					x-large
 					class="no-uppercase"
-                    @click="$vuetify.goTo('about', options)"
                     :to="{ hash: '#about' }"
                     >La Crêperie Chéri®</v-btn
                     ></v-toolbar-title
@@ -19,7 +18,6 @@
 						rounded
 						depressed
 						text
-						@click="$vuetify.goTo('about', options)"
 						:to="{ hash: '#about' }"
 						>O Nas</v-btn
 					>
@@ -29,7 +27,6 @@
 						rounded
 						depressed
 						text
-						@click="$vuetify.goTo('contact', options)"
 						:to="{ hash: '#contact' }"
 						>Delovni čas in kontakt</v-btn
 					>
@@ -39,7 +36,6 @@
 						rounded
 						depressed
 						text
-						@click="$vuetify.goTo('gallery', options)"
 						:to="{ hash: 'gallery' }"
 						>Galerija</v-btn
 					>
@@ -49,7 +45,6 @@
 						rounded
 						depressed
 						text
-						@click="$vuetify.goTo('menu', options)"
 						:to="{ hash: 'menu' }"
 						>Ponudba</v-btn
 					>
@@ -86,6 +81,10 @@
 				</v-navigation-drawer> -->
 			</v-overlay>
 		</v-toolbar>
+		<!-- @click="$vuetify.goTo('about', options)" -->
+		<!-- @click="$vuetify.goTo('contact', options)" -->
+		<!-- @click="$vuetify.goTo('gallery', options)" -->
+		<!-- @click="$vuetify.goTo('menu', options)" -->
 	</v-container>
 </template>
 

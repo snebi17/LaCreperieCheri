@@ -101,10 +101,13 @@ p > span {
 .inline {
 	display: flex;
 }
+<<<<<<< HEAD
 span {
 	/* border: 1px solid black; */
 }
 #contact {
 	padding: 40px 0;
 }
+=======
+>>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 </style>

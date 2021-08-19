@@ -1,5 +1,8 @@
 import VueRouter from "vue-router";
+<<<<<<< HEAD
 import goTo from "vuetify/es5/services/goto";
+=======
+>>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 // import Store from '@/store';
 
 const routes = [
@@ -38,6 +41,7 @@ const routes = [
 const router = new VueRouter({
 	mode: "history",
 	scrollBehavior: (to, from, savedPosition) => {
+<<<<<<< HEAD
 		let scrollTo = 0;
 
 		if (to.hash) {
@@ -47,6 +51,17 @@ const router = new VueRouter({
 		}
 
 		return goTo(scrollTo);
+=======
+		if (to.hash) {
+			return {
+				selector: to.hash,
+				behavior: "smooth"
+			}
+		} else if (savedPosition) {
+			return savedPosition
+		}
+		return { x: 0, y: 0 }
+>>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 	},
 	routes: routes,
 });

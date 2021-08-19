@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
-    <v-container fluid accent class="d-none d-md-flex">
-=======
     <v-container fluid accent>
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
         <v-row align="center">
             <v-col cols="4" align="center" class="success--text">
                 <p class="font-weight-bold text-body-1">Kje nas lahko najdete?</p>

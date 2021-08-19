@@ -31,10 +31,7 @@
 				</v-card>
 			</v-col>
 		</v-row>
-<<<<<<< HEAD
-=======
 		
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 	</v-container>
 </template>
 

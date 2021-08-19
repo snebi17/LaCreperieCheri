@@ -7,10 +7,6 @@
                     text
 					x-large
 					class="no-uppercase"
-<<<<<<< HEAD
-                    @click="$vuetify.goTo('about', options)"
-=======
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
                     :to="{ hash: '#about' }"
                     >La Crêperie Chéri®</v-btn
                     ></v-toolbar-title
@@ -22,10 +18,6 @@
 						rounded
 						depressed
 						text
-<<<<<<< HEAD
-						@click="$vuetify.goTo('about', options)"
-=======
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 						:to="{ hash: '#about' }"
 						>O Nas</v-btn
 					>
@@ -35,10 +27,6 @@
 						rounded
 						depressed
 						text
-<<<<<<< HEAD
-						@click="$vuetify.goTo('contact', options)"
-=======
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 						:to="{ hash: '#contact' }"
 						>Delovni čas in kontakt</v-btn
 					>
@@ -48,10 +36,6 @@
 						rounded
 						depressed
 						text
-<<<<<<< HEAD
-						@click="$vuetify.goTo('gallery', options)"
-=======
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 						:to="{ hash: 'gallery' }"
 						>Galerija</v-btn
 					>
@@ -61,19 +45,11 @@
 						rounded
 						depressed
 						text
-<<<<<<< HEAD
-						@click="$vuetify.goTo('menu', options)"
-=======
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 						:to="{ hash: 'menu' }"
 						>Ponudba</v-btn
 					>
 				</v-col>
 			</v-toolbar-items>
-<<<<<<< HEAD
-			<v-app-bar-nav-icon class="d-flex d-md-none"></v-app-bar-nav-icon>
-		</v-toolbar>
-=======
 			<v-app-bar-nav-icon class="d-flex d-md-none" @click="drawer = true"></v-app-bar-nav-icon>
 			<v-overlay :value="drawer">
 				<v-btn @click="drawer = false"></v-btn>
@@ -109,7 +85,6 @@
 		<!-- @click="$vuetify.goTo('contact', options)" -->
 		<!-- @click="$vuetify.goTo('gallery', options)" -->
 		<!-- @click="$vuetify.goTo('menu', options)" -->
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 	</v-container>
 </template>
 
@@ -118,10 +93,7 @@ export default {
 	name: "Navigation",
 	data() {
 		return {
-<<<<<<< HEAD
-=======
 			drawer: false,
->>>>>>> 2e25fae152e3dd4f3569480bac5ff77f0086d012
 			duration: 300,
 			offset: 0,
 			easing: "easeInOutCubic",
